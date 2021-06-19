@@ -14,7 +14,7 @@ class Student(Person):
         super().__init__(name)
 
     def accept(self, visitor):
-        visitor.visit_student(self)
+        return visitor.visit_student(self)
 
 
 class Professor(Person):
@@ -23,7 +23,7 @@ class Professor(Person):
         super().__init__(name)
 
     def accept(self, visitor):
-        visitor.visit_professor(self)
+        return visitor.visit_professor(self)
 
 
 class Visitor(object):
@@ -38,16 +38,16 @@ class Visitor(object):
 class Session(Visitor):
 
     def visit_student(self, student):
-        print("{} сдаёт сессию".format(student.name))
+        return "{} сдаёт сессию".format(student.name)
 
     def visit_professor(self, professor):
-        print("{} принимает экзамен".format(professor.name))
+        return "{} принимает экзамен".format(professor.name)
 
 
 class Vacation(Visitor):
 
     def visit_student(self, student):
-        print("{} отдыхает".format(student.name))
+        return "{} отдыхает".format(student.name)
 
     def visit_professor(self, professor):
-        print("{} в отпуске".format(professor.name))
+        return "{} в отпуске".format(professor.name)

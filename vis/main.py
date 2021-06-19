@@ -5,14 +5,14 @@ from visitor import Vacation
 
 
 def main():
-    student = Student("Юляша")
-    professor = Professor("Степанов")
+    student = Student("Агафонова Ю.Д.")
+    professor = Professor("Степанов А.Н.")
     session = Session()
     vacation = Vacation()
-    student.accept(session)
-    professor.accept(session)
-    student.accept(vacation)
-    professor.accept(vacation)
+    print(student.accept(session))
+    print(professor.accept(session))
+    print(student.accept(vacation))
+    print(professor.accept(vacation))
 
 
 if __name__ == "__main__":
